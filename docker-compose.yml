@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  master:
+    container_name: master
+    ports:
+      - 3306:3306
+    build:
+      context: ./ubuntu
+    volumes:
+      - mysql_volume:/etc/mysql/conf.d
+      - mysql-data:/var/lib/mysql
+    tty: true
+volumes:
+  mysql_volume:
+  mysql-data:
